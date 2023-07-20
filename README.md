@@ -6,10 +6,10 @@ This flow function exposes a HTTP endpoint. You can submit any data to the endpo
 2. Go to [Flows.network](https://flows.network/flow/new) to create a new flow.
 3. Import the forked repo from your account into flows.network.
 4. Build and deploy.
-5. You will now get a URL endpoint from the flow function. You can test it as follows.
+5. You will now get a URL endpoint to access the flow function. It is under the *Lambda Endpoint* section on the flows.network web site. You can test it as follows.
 
 The example below shows how to query a flow function we have already deployed.
 
 ```
-curl -X POST http://www -d "I am a Rustacean"
+curl -X POST  https://code.flows.network/lambda/j4DPFGufPr -d "I am a Rustacean"
 ```
