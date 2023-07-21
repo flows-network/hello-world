@@ -9,7 +9,14 @@ This flow function exposes a HTTP endpoint. You can submit any data to the endpo
 5. You will now get a URL endpoint to access the flow function. It is under the *Lambda Endpoint* section on the flows.network web site. You can test it as follows.
 
 The example below shows how to query a flow function we have already deployed.
+You can type the following URL into any browser's address bar:
 
 ```
-curl -X POST  https://code.flows.network/lambda/j4DPFGufPr -d "I am a Rustacean"
+https://code.flows.network/lambda/j4DPFGufPr?msg=I+am+a+Rustacean
+```
+
+Or, you can use the `curl` command to access the flow function.
+
+```
+curl https://code.flows.network/lambda/j4DPFGufPr?msg=I+am+a+Rustacean
 ```

@@ -12,12 +12,13 @@ pub async fn run() -> anyhow::Result<()> {
     Ok(())
 }
 
-async fn handler(headers: Vec<(String, String)>, _qry: HashMap<String, Value>, body: Vec<u8>) {
+async fn handler(headers: Vec<(String, String)>, qry: HashMap<String, Value>, _body: Vec<u8>) {
     logger::init();
     log::info!("Headers -- {:?}", headers);
 
-    let body_string = String::from_utf8(body).unwrap_or("".to_string());
-    let resp = format!("Welcome to flows.network.\nYou just said: '{}'.\nLearn more at: https://github.com/flows-network/hello-world\n", body_string);
+    let msg = qry.get("msg".to_string()).unwrap();
+    // let msg = String::from_utf8(body).unwrap_or("".to_string());
+    let resp = format!("Welcome to flows.network.\nYou just said: '{}'.\nLearn more at: https://github.com/flows-network/hello-world\n", msg);
 
     send_response(
         200,
