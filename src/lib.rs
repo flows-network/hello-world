@@ -16,7 +16,7 @@ async fn handler(headers: Vec<(String, String)>, qry: HashMap<String, Value>, _b
     logger::init();
     log::info!("Headers -- {:?}", headers);
 
-    let msg = qry.get("msg".to_string()).unwrap();
+    let msg = qry.get("msg").unwrap();
     // let msg = String::from_utf8(body).unwrap_or("".to_string());
     let resp = format!("Welcome to flows.network.\nYou just said: '{}'.\nLearn more at: https://github.com/flows-network/hello-world\n", msg);
 
