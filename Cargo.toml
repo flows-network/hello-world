@@ -8,7 +8,7 @@ path = "src/lib.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
-lambda-flows = "0.4"
+webhook-flows = "0.1"
 flowsnet-platform-sdk = "0.1"
 tokio_wasi = { version = "1.25.1", features = ["macros", "rt"] }
 serde_json = "1.0"
