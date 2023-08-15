@@ -12,11 +12,11 @@ The example below shows how to query a flow function we have already deployed.
 You can type the following URL into any browser's address bar:
 
 ```
-https://code.flows.network/lambda/j4DPFGufPr?msg=I+am+a+Rustacean
+https://code.flows.network/webhook/5VtSyNi1Vcsd4wQDgmcH?msg=I+am+a+Rustacean
 ```
 
 Or, you can use the `curl` command to access the flow function.
 
 ```
-curl https://code.flows.network/lambda/j4DPFGufPr?msg=I+am+a+Rustacean
+curl https://code.flows.network/webhook/5VtSyNi1Vcsd4wQDgmcH?msg=I+am+a+Rustacean
 ```
