@@ -1,17 +1,15 @@
-use webhook_flows::{request_received, send_response};
+use webhook_flows::{create_endpoint, request_handler, send_response};
 use flowsnet_platform_sdk::logger;
 use std::collections::HashMap;
 use serde_json::Value;
 
 #[no_mangle]
 #[tokio::main(flavor = "current_thread")]
-pub async fn run() -> anyhow::Result<()> {
-    request_received(|headers, qry, body| {
-        handler(headers, qry, body)
-    }).await;
-    Ok(())
+pub async fn on_deploy() {
+    create_endpoint().await;
 }
 
+#[request_handler]
 async fn handler(headers: Vec<(String, String)>, qry: HashMap<String, Value>, _body: Vec<u8>) {
     logger::init();
     log::info!("Headers -- {:?}", headers);
